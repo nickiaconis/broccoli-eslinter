@@ -40,16 +40,20 @@ The function used to generate test modules. You can provide a custom function fo
 The function receives the following arguments:
 
 - relativePath - The relative path to the file being tested.
-- errors - An array of eslint error objects found.
+- result - An object that details the eslint errors/warnings found.
+- result.messages - An array of eslint error/warning messages.
+- result.errorCount - The number of errors found.
+- result.warningCount - THe number of warnings found.
 
 Example usage:
 ```
 var path = require('path');
 
-function testGenerator(relativePath, errors) {
+function testGenerator(relativePath, result) {
+  var passed = (result.errorCount === 0);
   return "module('" + path.dirname(relativePath) + '");";
          "test('" + relativePath + "' should pass jshint', function() { " +
-         "  ok(passed, moduleName+" should pass jshint."+(errors ? "\n"+errors : '')); " +
+         "  ok(passed, moduleName+" should pass jshint."+(!passed ? "\n"+result.messages : '')); " +
          "});
 };
 
