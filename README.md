@@ -1,27 +1,19 @@
-# [broccoli](https://github.com/joliss/broccoli)-lint-eslint
-
-[![build status](https://secure.travis-ci.org/jonathanKingston/broccoli-lint-eslint.svg)](http://travis-ci.org/jonathanKingston/broccoli-lint-eslint)
-[![npm status](http://img.shields.io/npm/v/broccoli-lint-eslint.svg)](https://www.npmjs.org/package/broccoli-lint-eslint)
-[![dependency status](https://david-dm.org/jonathanKingston/broccoli-lint-eslint.svg)](https://david-dm.org/jonathanKingston/broccoli-lint-eslint)
+# [broccoli](https://github.com/joliss/broccoli)-eslinter
 
 > Lint JavaScript using [Eslint](http://eslint.org/)
 
-This is a fork of [makepanic/broccoli-eslint](https://github.com/makepanic/broccoli-eslint) used to add new features and keep up to date with the latest ESLint. This fork may go away however it will track any API changes made to it's fork as long as possible.
-Most of the test setup and the build configuration is based on [sindresorhus/grunt-eslint](https://github.com/sindresorhus/grunt-eslint).
-The internal validation is heavily inspired by [eslint cli.js](https://github.com/eslint/eslint/blob/master/lib/cli.js)
+This is a fork of [jonathanKingston/broccoli-lint-eslint](https://github.com/jonathanKingston/broccoli-lint-eslint) used to change the test generator API. This fork may go away, however it will attempt to track it's parent fork as long as possible.
 
 ## Install
 
 ```bash
-npm install --save broccoli-lint-eslint
+npm install --save broccoli-eslinter
 ```
 
 ## Example
 
-Note: The API will change in subsequent 0.x versions.
-
 ```js
-var eslint = require('broccoli-lint-eslint');
+var eslint = require('broccoli-eslinter');
 tree = eslint(tree, options);
 ```
 

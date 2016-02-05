@@ -1,6 +1,6 @@
 {
-  "name": "broccoli-lint-eslint",
-  "version": "1.1.1",
+  "name": "broccoli-eslinter",
+  "version": "0.1.0",
   "description": "broccoli filter that runs eslint",
   "main": "lib/index.js",
   "scripts": {
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/jonathanKingston/broccoli-lint-eslint.git"
+    "url": "git://github.com/nickiaconis/broccoli-lint-eslint.git"
   },
   "keywords": [
     "eslint",
@@ -21,12 +21,12 @@
     "esprima",
     "broccoli-plugin"
   ],
-  "author": "Jonathan Kingston",
+  "author": "Nick Iaconis",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jonathanKingston/broccoli-lint-eslint/issues"
+    "url": "https://github.com/nickiaconis/broccoli-eslinter/issues"
   },
-  "homepage": "https://github.com/jonathanKingston/broccoli-lint-eslint",
+  "homepage": "https://github.com/nickiaconis/broccoli-eslinter",
   "dependencies": {
     "broccoli-filter": "^0.1.12",
     "eslint": "^1.4.1"
