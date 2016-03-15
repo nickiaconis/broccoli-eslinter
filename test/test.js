@@ -1,14 +1,28 @@
+const CLIEngine = require('eslint').CLIEngine;
+const RSVP = require('rsvp');
 const expect = require('chai').expect;
-const stew = require('broccoli-stew');
-const find = stew.find;
-const mv = stew.mv;
-const runEslint = require('./helpers/run-eslint');
 const FIXTURES = 'test/fixture';
 const CAMELCASE = '(camelcase)';
 const CONSOLE = '(no-console)';
 const CUSTOM_RULES = 'testing custom rules';
 const DOUBLEQUOTE = 'Strings must use doublequote.';
 const FILEPATH = 'fixture/1.js';
+
+function runEslint(path, _options) {
+  const options = _options || {};
+
+  // default options
+  options.format = options.format || 'eslint/lib/formatters/compact';
+  options.options = options.options || {};
+  options.options.ignore = options.options.ignore || false;
+
+  const formatter = require(options.format); // eslint-disable-line global-require
+  const cliEngine = new CLIEngine(options.options);
+  const outputObj = cliEngine.executeOnFiles([path]);
+  const output = formatter(outputObj.results);
+
+  return RSVP.Promise.resolve(output);
+}
 
 describe('EslintValidationFilter', function describeEslintValidationFilter() {
   function shouldReportErrors(inputTree) {
@@ -55,6 +69,5 @@ describe('EslintValidationFilter', function describeEslintValidationFilter() {
     });
   });
 
-  // specify test fixtures via a broccoli tree/node
-  it('should accept a tree/node as the input', shouldReportErrors(find(mv(FIXTURES, 'foobar/fixture'))));
+  it('should report the same errors', shouldReportErrors(FIXTURES));
 });

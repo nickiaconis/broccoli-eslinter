@@ -50,6 +50,7 @@
     "chai": "^3.5.0",
     "eslint-config-nightmare-mode": "^2.3.0",
     "mocha": "^2.2.4",
-    "rimraf": "^2.5.1"
+    "rimraf": "^2.5.1",
+    "rsvp": "^3.2.1"
   }
 }
