@@ -9,7 +9,7 @@
     "prepublish": "npm run babelify",
     "lint": "eslint .",
     "babelify-tests": "babel test --ignore fixture --out-dir build/test",
-    "test": "npm run babelify && npm run babelify-tests && npm run lint && node_modules/mocha/bin/mocha build/test/test.js"
+    "test": "node_modules/mocha/bin/mocha test/test.js"
   },
   "repository": {
     "type": "git",

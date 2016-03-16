@@ -1,3 +1,6 @@
 {
-  "extends": "nightmare-mode/node"
+  "extends": "nightmare-mode/node",
+  "rules": {
+    "custom-no-alert": 2
+  }
 }
